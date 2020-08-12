@@ -17,7 +17,7 @@ std::vector<std::string> split(const std::string& str, char d);
 
 bool sortIp(const std::vector<std::string>& v1, const std::vector < std::string >& v2);
 
-void printIp(const  std::vector<std::vector<std::string>>& v1);
+void printIp(const  std::vector<std::vector<std::string> >& v1);
 
 void printIpFiltered(const  std::vector<std::vector<std::string> >& v1, const std::string& f1);
 
