@@ -14,5 +14,9 @@ target_include_directories(libs PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
+set_target_properties(libs PROPERTIES
+    CXX_STANDARD 14
+    CXX_STANDARD_REQUIRED ON
+)
 
 # TODO: Add tests and install targets if needed.
