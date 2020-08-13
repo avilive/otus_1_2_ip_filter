@@ -14,7 +14,7 @@ target_include_directories(libs PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-set_target_properties(ip_filter.cpp ip_filter.h PROPERTIES
+set_target_properties(libs PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
