@@ -2,7 +2,7 @@
 #include <algorithm> // for sort() 
 #include <string>
 #include <fstream>
-#include "ip_filter.h"
+#include <ip_filter.h>
 int main(int argc, char* argv[])
 {
     try
@@ -14,8 +14,8 @@ int main(int argc, char* argv[])
             std::vector<std::string> v = split(line, '\t');
             ip_pool.push_back(split(v.at(0), '.'));
         }
-
-      /*  {// read from file for testing
+        
+    /*    {// read from file for testing
             std::string line;
             std::ifstream myfile("C:\\Users\\avili\\Documents\\OTUS CPP\\1\\otus_1_2_ip_filter\\main\\ip_filter.tsv");
             if (myfile.is_open())
