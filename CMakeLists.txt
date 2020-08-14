@@ -3,8 +3,9 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("otus_1_2_ip_filter")
+project ("otus_1_2_ip_filter" VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
+set($ENV{TRAVIS_BUILD_NUMBER} $ENV{TRAVIS_BUILD_NUMBER}+1)
 # Include sub-projects.
 add_subdirectory ("libs")
 add_subdirectory ("main")
