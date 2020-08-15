@@ -46,7 +46,7 @@ bool sortIp(const std::vector<std::string>& v1, const std::vector < std::string 
 }
 
 //print ip_pool
-void printIp(const  std::vector<std::vector<std::string>>& v1) {
+void printIp(const  std::vector<std::vector<std::string> >& v1) {
 
     for (auto ip = v1.cbegin(); ip != v1.cend(); ++ip)
     {
