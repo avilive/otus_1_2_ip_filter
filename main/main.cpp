@@ -1,8 +1,8 @@
-#include "ip_filter.h"
 #include <iostream>
 #include <algorithm> // for sort() 
 #include <string>
 #include <fstream>
+#include <ip_filter.h>
 
 int main(int argc, char* argv[])
 {
@@ -10,13 +10,13 @@ int main(int argc, char* argv[])
     {
         std::vector<std::vector<std::string> > ip_pool;
 
-/*        for (std::string line; std::getline(std::cin, line);)
+        for (std::string line; std::getline(std::cin, line);)
         {
             std::vector<std::string> v = split(line, '\t');
             ip_pool.push_back(split(v.at(0), '.'));
-        }*/
-
-        {// read from file for testing
+        }
+        
+    /*    {// read from file for testing
             std::string line;
             std::ifstream myfile("C:\\Users\\avili\\Documents\\OTUS CPP\\1\\otus_1_2_ip_filter\\main\\ip_filter.tsv");
             if (myfile.is_open())
@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
             {
                 std::cout << "Error opening file" << std::endl;
             }
-        }
+        }*/
 
         //reverse lexicographically sort
         sort(ip_pool.begin(), ip_pool.end(), sortIp);

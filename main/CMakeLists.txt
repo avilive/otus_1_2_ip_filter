@@ -7,7 +7,11 @@ set(SOURCES
     main.cpp 
 )
 
-add_executable(main.cpp ${SOURCES})
+add_executable(MyApp ${SOURCES})
 
-target_link_libraries(main.cpp libs)
+target_link_libraries(MyApp libs)
 # TODO: Add tests and install targets if needed.
+set_target_properties(MyApp  PROPERTIES
+    CXX_STANDARD 14
+    CXX_STANDARD_REQUIRED ON
+)
