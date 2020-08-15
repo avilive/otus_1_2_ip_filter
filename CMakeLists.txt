@@ -3,13 +3,27 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("otus_1_2_ip_filter" VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
-set($ENV{TRAVIS_BUILD_NUMBER} $ENV{TRAVIS_BUILD_NUMBER}+1)
+set(HEADER_FILE "build_number.h")
+set(CACHE_FILE "BuildNumberCache.txt")
+
+#Reading data from file + incrementation
+IF(EXISTS ${CACHE_FILE})
+    file(READ ${CACHE_FILE} BUILD_NUMBER)
+    math(EXPR BUILD_NUMBER "${BUILD_NUMBER}+1")
+ELSE()
+    set(BUILD_NUMBER "1")
+ENDIF()
+
+project ("otus_1_2_ip_filter" VERSION 0.0.${BUILD_NUMBER})
+
 # Include sub-projects.
 add_subdirectory ("libs")
 add_subdirectory ("main")
 #add_subdirectory ("test")
+
+
+
 
 set(CPACK_GENERATOR DEB)
 
