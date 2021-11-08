@@ -24,9 +24,11 @@ file(WRITE ${HEADER_FILE} "#ifndef BUILD_NUMBER_H\n#define BUILD_NUMBER_H\n\n#de
 project ("ip_filter" VERSION 0.0.${BUILD_NUMBER})
 
 # Include sub-projects.
-add_subdirectory ("libs")
+add_subdirectory(libs)
 add_subdirectory ("main")
 #add_subdirectory ("test")
+
+
 
 set(CPACK_GENERATOR DEB)
 
