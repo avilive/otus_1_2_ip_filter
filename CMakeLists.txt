@@ -3,7 +3,6 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-
 set(HEADER_FILE "build_number.h")
 set(CACHE_FILE "BuildNumberCache.txt")
 
