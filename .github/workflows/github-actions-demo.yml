@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: gitHub-actions-demo
 env:
   APPLICATION_NAME : "IP_filter"
   PACKAGE_NAME    : "IP_filter_deploy_ver-${{ github.sha }}"
