@@ -30,9 +30,12 @@ jobs:
     - uses: actions/checkout@v2
     #- name: configure
     #  run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: Running cmake (windows)
+      run: |
+        cd ${{ github.workspace }}
+        mkdir build
+        cd build
+        cmake .. -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}
+                  /../vcpkg/scripts/buildsystems/vcpkg.cmake
+    #- name: make distcheck
+    #  run: make distcheck
