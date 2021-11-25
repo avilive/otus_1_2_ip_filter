@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 env:
   APPLICATION_NAME : "IP_filter"
-  PACKAGE_NAME    : "IP_filter_deploy_ver-${{ github.sha}}"
+  PACKAGE_NAME    : "IP_filter_deploy_ver-${{ github.sha }}"
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -17,7 +17,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      -name: Enviroment variables    
-          echo "Application_name: ${{ env.APPLICATION_NAME }}"
-          echo "PACKAGE_NAME: ${{ env.PACKAGE_NAME }}"
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Enviroment variables    
+        run:  |
+               echo "Application_name: ${{ env.APPLICATION_NAME }}"
+               echo "PACKAGE_NAME: ${{ env.PACKAGE_NAME }}"
+               echo "🍏 This job's status is ${{ job.status }}."
