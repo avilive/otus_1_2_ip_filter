@@ -1,4 +1,4 @@
-// otus_1_2_ip_filter.h : Include file for standard system include files,
+﻿// otus_1_2_ip_filter.h : Include file for standard system include files,
 // or project specific include files.
 
 #pragma once
