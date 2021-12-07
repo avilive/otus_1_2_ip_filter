@@ -1,11 +1,12 @@
 name: gitHub-actions-demo
+
+on: [push, pull_request]
+
 env:
   CMAKE_VERSION: 3.21.1
   NINJA_VERSION: 1.10.2
   BUILD_TYPE: Release
   CCACHE_VERSION: 4.4
-
-on: [push, pull_request]
 
 jobs:
   build:
