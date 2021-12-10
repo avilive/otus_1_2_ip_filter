@@ -27,7 +27,7 @@ add_subdirectory(libs)
 add_subdirectory ("main")
 #add_subdirectory ("test")
 
-install(TARGETS ip_filter)
+install(TARGETS "ip_filter")
 
 set(CPACK_GENERATOR DEB)
 
