@@ -9,6 +9,8 @@ set(SOURCES
 
 add_executable(${PROJECT_NAME} main.cpp)
 
+install(TARGETS ip_filter)
+
 #target_link_libraries(MyApp libs)
 target_link_libraries(${PROJECT_NAME}
     sub::lib1
