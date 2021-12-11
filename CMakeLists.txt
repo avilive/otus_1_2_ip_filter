@@ -20,7 +20,7 @@ file(WRITE ${CACHE_FILE} "${BUILD_NUMBER}")
 #Create the header
 file(WRITE ${HEADER_FILE} "#ifndef BUILD_NUMBER_H\n#define BUILD_NUMBER_H\n\n#define BUILD_NUMBER ${BUILD_NUMBER}\n\n#endif")
 
-project ("ip_filter" VERSION 0.0.${BUILD_NUMBER})
+project (ip_filter VERSION 0.0.${BUILD_NUMBER})
 
 # Include sub-projects.
 add_subdirectory(libs)
