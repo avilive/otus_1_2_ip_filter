@@ -3,7 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("main")
+project (main)
 
 set(SOURCES
     main.cpp 
@@ -11,7 +11,7 @@ set(SOURCES
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-install(TARGETS ip_filter)
+install(TARGETS main)
 
 #target_link_libraries(MyApp libs)
 target_link_libraries(${PROJECT_NAME}
