@@ -1,12 +1,18 @@
-file(GLOB SRCS *.cpp)
 
+enable_testing()
+file(GLOB SRCS *.cpp)
 ADD_EXECUTABLE(test_ip_filter ${SRCS})
 
+#add_executable(
+#  hello_test
+#  hello_test.cc
+#)
+
 TARGET_LINK_LIBRARIES(test_ip_filter
-    libs
+    sub::lib1
     libgtest
     libgmock
 )
 
-add_test(NAME test_ip_filter
-         COMMAND test_ip_filter)
+include(GoogleTest)
+gtest_discover_tests(hello_test)
