@@ -1,15 +1,36 @@
-﻿cmake_minimum_required(VERSION 3.14)
-project(my_project)
-
-# GoogleTest requires at least C++11
-set(CMAKE_CXX_STANDARD 11)
-
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+﻿include(FetchContent)
+FetchContent_Declare(gtest
+  QUIET
+  URL https://github.com/google/googletest/archive/release-1.10.0.tar.gz
 )
-# For Windows: Prevent overriding the parent project's compiler/linker settings
+# configure build of googletest
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
+set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(gtest)
 
+add_executable(
+    unit_tests
+    test_ip_filter.cpp
+    )
+
+target_link_libraries(unit_tests PRIVATE
+    sub::lib1
+    gtest_main
+  #  libgtest
+  #  libgmock
+)
+
+#target_link_libraries(unit_tests
+#  PRIVATE
+#    example
+#    gtest_main
+#  )
+
+# automatic discovery of unit tests
+include(GoogleTest)
+gtest_discover_tests(unit_tests
+  PROPERTIES
+    LABELS "unit"
+  DISCOVERY_TIMEOUT  # how long to wait (in seconds) before crashing
+    240
+  )

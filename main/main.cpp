@@ -6,6 +6,7 @@
 
 int main(int argc, char* argv[])
 {
+  //std::cout<<split("192.168.0.1",'.')<<std::endl;
     try
     {
         std::vector<std::vector<std::string> > ip_pool;
@@ -16,9 +17,9 @@ int main(int argc, char* argv[])
             ip_pool.push_back(split(v.at(0), '.'));
         }
         
-    /*    {// read from file for testing
+    /*   {// read from file for testing
             std::string line;
-            std::ifstream myfile("C:\\Users\\avili\\Documents\\OTUS CPP\\1\\otus_1_2_ip_filter\\main\\ip_filter.tsv");
+            std::ifstream myfile("G:\\GIT\\OTUS C++ advanced\\otus_1_2_ip_filter\\ip_list.tsv");
             if (myfile.is_open())
             {
                 while (std::getline(myfile, line))
@@ -32,13 +33,17 @@ int main(int argc, char* argv[])
             {
                 std::cout << "Error opening file" << std::endl;
             }
-        }*/
-
+        }
+*/
         //reverse lexicographically sort
         sort(ip_pool.begin(), ip_pool.end(), sortIp);
+        std::cout<<"Ip pool:"<<std::endl;
         printIp(ip_pool);
+        std::cout<<"IP filterd 1:"<<std::endl;
         printIpFiltered(ip_pool, "1");
+        std::cout<<"IP filterd 46.70:"<<std::endl;
         printIpFiltered(ip_pool, "46", "70");
+        std::cout<<"IP filterd 46"<<std::endl;
         printIpFilteredAny(ip_pool, "46");
 
         // 222.173.235.246
