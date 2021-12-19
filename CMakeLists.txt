@@ -3,6 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
+set(CMAKE_CXX_STANDARD 17)
 set(HEADER_FILE "build_number.h")
 set(CACHE_FILE "BuildNumberCache.txt")
 
@@ -21,6 +22,7 @@ file(WRITE ${CACHE_FILE} "${BUILD_NUMBER}")
 file(WRITE ${HEADER_FILE} "#ifndef BUILD_NUMBER_H\n#define BUILD_NUMBER_H\n\n#define BUILD_NUMBER ${BUILD_NUMBER}\n\n#endif")
 
 project (ip_filter VERSION 0.0.${BUILD_NUMBER})
+enable_testing()
 
 # Include sub-projects.
 add_subdirectory(libs)
@@ -39,5 +41,5 @@ set(CPACK_PACKAGE_CONTACT example@example.com)
 
 include(CPack)
 
-enable_testing()
+
 

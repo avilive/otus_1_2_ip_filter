@@ -16,15 +16,8 @@ add_executable(
 target_link_libraries(unit_tests PRIVATE
     sub::lib1
     gtest_main
-  #  libgtest
-  #  libgmock
 )
 
-#target_link_libraries(unit_tests
-#  PRIVATE
-#    example
-#    gtest_main
-#  )
 
 # automatic discovery of unit tests
 include(GoogleTest)
@@ -35,5 +28,4 @@ gtest_discover_tests(unit_tests
     240
   )
 
-add_test(NAME ip_filter COMMAND unit_tests)
 
