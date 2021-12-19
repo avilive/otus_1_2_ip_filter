@@ -34,3 +34,6 @@ gtest_discover_tests(unit_tests
   DISCOVERY_TIMEOUT  # how long to wait (in seconds) before crashing
     240
   )
+
+add_test(NAME ip_filter COMMAND unit_tests)
+
